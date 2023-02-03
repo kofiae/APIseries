@@ -20,6 +20,10 @@ namespace APIseries.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Returns all series
+        /// </summary>
+        /// <returns> A list of all the series</returns>
         // GET: api/Series
         [HttpGet]
         [ProducesResponseType(200)]
@@ -28,6 +32,11 @@ namespace APIseries.Controllers
             return await _context.Series.ToListAsync();
         }
 
+        /// <summary>
+        /// Returns a specific series
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> A serie</returns>
         // GET: api/Series/5
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
@@ -44,6 +53,12 @@ namespace APIseries.Controllers
             return serie;
         }
 
+        /// <summary>
+        /// Update a serie's informations
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="serie"></param>
+        /// <returns> An updated series</returns>
         // PUT: api/Series/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -79,6 +94,11 @@ namespace APIseries.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Create a new series
+        /// </summary>
+        /// <param name="serie"></param>
+        /// <returns> The new series</returns>
         // POST: api/Series
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
@@ -93,6 +113,11 @@ namespace APIseries.Controllers
             return CreatedAtAction("GetSerie", new { id = serie.Serieid }, serie);
         }
 
+        /// <summary>
+        /// Delete a serie
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>The deleted serie</returns>
         // DELETE: api/Series/5
         [HttpDelete("{id}")]
         [ProducesResponseType(204)]
