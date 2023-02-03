@@ -9,6 +9,17 @@ namespace APIseries.Models.EntityFramework
     [Table("serie")]
     public partial class Serie
     {
+        public Serie(int serieid, string titre, string? resume, int? nbsaisons, int? nbepisodes, int? anneecreation, string? network)
+        {
+            this.Serieid = serieid;
+            this.Titre = titre;
+            this.Resume = resume;
+            this.Nbsaisons = nbsaisons;
+            this.Nbepisodes = nbepisodes;
+            this.Anneecreation = anneecreation;
+            this.Network = network;
+        }
+
         [Key]
         [Column("serieid")]
         public int Serieid { get; set; }
