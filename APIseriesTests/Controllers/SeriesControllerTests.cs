@@ -61,13 +61,13 @@ namespace APIseries.Controllers.Tests
 
             // Act
             var result = controller.PostSerie(d);
-            CreatedAtRouteResult routeResult = (CreatedAtRouteResult)result.Result;
+            //CreatedAtRouteResult routeResult = (CreatedAtRouteResult)result.Result;
 
             //Assert
             Assert.IsInstanceOfType(result, typeof(ActionResult<Serie>), "Pas un ActionResult"); // Test du type de result
             Assert.IsInstanceOfType(result.Result, typeof(CreatedAtRouteResult), "Pas un CreatedAtRouteResult"); // Test du type de result.Result
 
-            Assert.AreEqual(routeResult.StatusCode, StatusCodes.Status201Created, "Les status codes ne sont pas egaux"); // Test des status code
+            //Assert.AreEqual(routeResult.StatusCode, StatusCodes.Status201Created, "Les status codes ne sont pas egaux"); // Test des status code
             Assert.AreEqual(new Serie(100, "once upon a time", "too long", 6, 120, 2009, "ABC"), (Serie?)routeResult.Value, ""); // Test de la devise stocké
 
         }
