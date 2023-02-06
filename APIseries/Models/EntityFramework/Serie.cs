@@ -19,6 +19,15 @@ namespace APIseries.Models.EntityFramework
             this.Anneecreation = anneecreation;
             this.Network = network;
         }
+        public Serie(int serieid, string titre, int? nbsaisons, int? nbepisodes, int? anneecreation, string? network)
+        {
+            this.Serieid = serieid;
+            this.Titre = titre;
+            this.Nbsaisons = nbsaisons;
+            this.Nbepisodes = nbepisodes;
+            this.Anneecreation = anneecreation;
+            this.Network = network;
+        }
 
         [Key]
         [Column("serieid")]
@@ -37,5 +46,22 @@ namespace APIseries.Models.EntityFramework
         [Column("network")]
         [StringLength(50)]
         public string? Network { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Serie serie &&
+                   this.Serieid == serie.Serieid &&
+                   this.Titre == serie.Titre &&
+                   this.Resume == serie.Resume &&
+                   this.Nbsaisons == serie.Nbsaisons &&
+                   this.Nbepisodes == serie.Nbepisodes &&
+                   this.Anneecreation == serie.Anneecreation &&
+                   this.Network == serie.Network;
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
