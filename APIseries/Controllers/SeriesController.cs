@@ -36,7 +36,7 @@ namespace APIseries.Controllers
         /// Returns a specific series
         /// </summary>
         /// <param name="id"></param>
-        /// <returns> A serie</returns>
+        /// <returns> A serie's information</returns>
         // GET: api/Series/5
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
