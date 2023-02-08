@@ -29,6 +29,10 @@ namespace APIseries.Models.EntityFramework
             this.Network = network;
         }
 
+        public Serie()
+        {
+        }
+
         [Key]
         [Column("serieid")]
         public int Serieid { get; set; }
