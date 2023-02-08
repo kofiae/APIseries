@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'apiseriesodu'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DD99288E86F4417AAB3FC03AA5D0E186 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_25CE20BB5CCB448F9BEB37399B43E425 }}
           package: .
